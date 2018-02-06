@@ -8,7 +8,7 @@ public class ListCmdRedis {
 
         jedis.del(list);
         System.out.println("lPush - Insert all the specified values at the head of the list stored at key");
-        System.out.println(jedis.lpush(list, "ZOHO"));
+        System.out.println(jedis.lpush(list, "Mallow"));
         System.out.println(jedis.lpush(list, "Welcome"));
         System.out.println();
 
@@ -17,12 +17,12 @@ public class ListCmdRedis {
         System.out.println();
 
         System.out.println("lInsert - Inserts value in the list stored at key either before or after the reference value pivot");
-        System.out.println(jedis.linsert(list, BinaryClient.LIST_POSITION.BEFORE, "ZOHO", "me"));
+        System.out.println(jedis.linsert(list, BinaryClient.LIST_POSITION.BEFORE, "Mallow", "me"));
         System.out.println(jedis.lrange(list, 0, -1));
         System.out.println();
 
         System.out.println("lIndex - Returns the element at index index in the list stored at key");
-        System.out.println(jedis.lindex(list, 2));  //0-welcome, 1-me, and 2-ZOHO or (-1)-ZOHO, (-2)-me, (-3)-welcome
+        System.out.println(jedis.lindex(list, 2));  //0-welcome, 1-me, and 2-Mallow or (-1)-Mallow, (-2)-me, (-3)-welcome
         System.out.println();
 
         System.out.println("lLen");

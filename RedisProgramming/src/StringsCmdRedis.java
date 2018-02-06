@@ -21,13 +21,13 @@ public class StringsCmdRedis {
 
         System.out.println("getRange");
         //getRange
-        jedis.set("text", "Hello world, I am @ ZOHO");
+        jedis.set("text", "Hello world, I am @ Mallow");
         System.out.println(jedis.getrange("text", 0, -1));  //whole text
         System.out.println(jedis.getrange("text", 0, 1));   //He
         System.out.println(jedis.getrange("text", -2, -1));   //HO
         System.out.println(jedis.getrange("text", 10, -11));   //d, I
         System.out.println(jedis.getrange("text", 10, -20));   //empty
-        System.out.println(jedis.getrange("text", 10, 2000));   //d, I am @ ZOHO
+        System.out.println(jedis.getrange("text", 10, 2000));   //d, I am @ Mallow
         System.out.println();
 
         System.out.println("getSet");
@@ -53,7 +53,7 @@ public class StringsCmdRedis {
         System.out.println();
 
         System.out.println("mSet & mGet");
-        jedis.mset("value1", "Pangaj", "value2", "Zoho", "value3", "Cliq");
+        jedis.mset("value1", "Pangaj", "value2", "Mallow", "value3", "Cliq");
         System.out.println(jedis.mget("value1", "value2", "value3", "MyName"));
         System.out.println();
 
@@ -96,7 +96,7 @@ public class StringsCmdRedis {
 
         System.out.println("mSetNX");
         //set multiple is not exists
-        jedis.msetnx("value10", "Pangaj", "value20", "Zoho", "value3", "Cliq"); //will not perform any operation because already "value3" exists
+        jedis.msetnx("value10", "Pangaj", "value20", "Mallow", "value3", "Cliq"); //will not perform any operation because already "value3" exists
         System.out.println(jedis.mget("value10", "value20", "value3"));
         System.out.println();
     }
